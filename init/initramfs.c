@@ -608,19 +608,7 @@ static void __init clean_rootfs(void)
 
 static int __init populate_rootfs(void)
 {
-<<<<<<< HEAD
-	char *err;
-
-	if (do_skip_initramfs) {
-		if (initrd_start)
-			free_initrd();
-		return default_rootfs();
-	}
-
-	err = unpack_to_rootfs(__initramfs_start, __initramfs_size);
-=======
 	char *err = unpack_to_rootfs(__initramfs_start, __initramfs_size);
->>>>>>> parent of c3c2e99fcc3e... ANDROID: initramfs: Add skip_initramfs command line option
 	if (err)
 		panic("%s", err); /* Failed to decompress INTERNAL initramfs */
 	if (initrd_start) {
